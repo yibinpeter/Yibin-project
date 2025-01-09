@@ -1,0 +1,1 @@
+Canny Edge Start    :      1 calls; 8291.758 msecs total time

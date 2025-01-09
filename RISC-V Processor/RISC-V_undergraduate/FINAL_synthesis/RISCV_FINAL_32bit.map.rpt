@@ -1,0 +1,1091 @@
+Analysis & Synthesis report for RISCV_FINAL_32bit
+Sun Jun 04 21:16:43 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for RAM:D_Memory|altsyncram:mem_rtl_0|altsyncram_qrp1:auto_generated
+ 16. Source assignments for RAM:I_Memory|altsyncram:mem_rtl_0|altsyncram_qhf1:auto_generated
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |RISCV_FINAL_32bit
+ 18. Parameter Settings for User Entity Instance: RAM:I_Memory
+ 19. Parameter Settings for User Entity Instance: RAM:D_Memory
+ 20. Parameter Settings for User Entity Instance: RISCVALU:ALU
+ 21. Parameter Settings for User Entity Instance: Control:MainControl
+ 22. Parameter Settings for Inferred Entity Instance: RAM:D_Memory|altsyncram:mem_rtl_0
+ 23. Parameter Settings for Inferred Entity Instance: RAM:I_Memory|altsyncram:mem_rtl_0
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "Control:MainControl"
+ 26. Port Connectivity Checks: "RAM:I_Memory"
+ 27. Port Connectivity Checks: "PClogic:PClogic"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Jun 04 21:16:43 2023           ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
+; Revision Name                   ; RISCV_FINAL_32bit                               ;
+; Top-level Entity Name           ; RISCV_FINAL_32bit                               ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 1317                                            ;
+; Total pins                      ; 77                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 39,616                                          ;
+; Total DSP Blocks                ; 2                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; RISCV_FINAL_32bit  ; RISCV_FINAL_32bit  ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                        ;
++------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                             ; Library ;
++------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; riscv_final_32bit.v                            ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v                            ;         ;
+; pclogic.v                                      ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v                                      ;         ;
+; branchpredictor.v                              ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/branchpredictor.v                              ;         ;
+; ram.v                                          ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ram.v                                          ;         ;
+; alucontrol.v                                   ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/alucontrol.v                                   ;         ;
+; riscvalu.v                                     ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscvalu.v                                     ;         ;
+; forwarding.v                                   ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/forwarding.v                                   ;         ;
+; control.v                                      ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/control.v                                      ;         ;
+; altsyncram.tdf                                 ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                         ;         ;
+; stratix_ram_block.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                  ;         ;
+; lpm_mux.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                            ;         ;
+; lpm_decode.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                         ;         ;
+; aglobal201.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/aglobal201.inc                                         ;         ;
+; a_rdenreg.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                          ;         ;
+; altrom.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altrom.inc                                             ;         ;
+; altram.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altram.inc                                             ;         ;
+; altdpram.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altdpram.inc                                           ;         ;
+; db/altsyncram_qrp1.tdf                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/altsyncram_qrp1.tdf                         ;         ;
+; db/riscv_final_32bit.ram0_ram_8b38d987.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/riscv_final_32bit.ram0_ram_8b38d987.hdl.mif ;         ;
+; db/altsyncram_qhf1.tdf                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/altsyncram_qhf1.tdf                         ;         ;
+; db/riscv_final_32bit.ram0_ram_4f138f2e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/riscv_final_32bit.ram0_ram_4f138f2e.hdl.mif ;         ;
++------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 1465           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 1626           ;
+;     -- 7 input functions                    ; 33             ;
+;     -- 6 input functions                    ; 1068           ;
+;     -- 5 input functions                    ; 156            ;
+;     -- 4 input functions                    ; 46             ;
+;     -- <=3 input functions                  ; 323            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 1317           ;
+;                                             ;                ;
+; I/O pins                                    ; 77             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 39616          ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 2              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 1381           ;
+; Total fan-out                               ; 14523          ;
+; Average fan-out                             ; 4.49           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Entity Name       ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-------------------+--------------+
+; |RISCV_FINAL_32bit                        ; 1626 (1352)         ; 1317 (1285)               ; 39616             ; 2          ; 77   ; 0            ; |RISCV_FINAL_32bit                                                                  ; RISCV_FINAL_32bit ; work         ;
+;    |ALUControl:ALUControl|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|ALUControl:ALUControl                                            ; ALUControl        ; work         ;
+;    |Control:MainControl|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|Control:MainControl                                              ; Control           ; work         ;
+;    |Forwarding:Mainforwarding|            ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|Forwarding:Mainforwarding                                        ; Forwarding        ; work         ;
+;    |PClogic:PClogic|                      ; 26 (22)             ; 32 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|PClogic:PClogic                                                  ; PClogic           ; work         ;
+;       |BranchPredictor:BP|                ; 4 (4)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|PClogic:PClogic|BranchPredictor:BP                               ; BranchPredictor   ; work         ;
+;    |RAM:D_Memory|                         ; 0 (0)               ; 0 (0)                     ; 38400             ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:D_Memory                                                     ; RAM               ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 38400             ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:D_Memory|altsyncram:mem_rtl_0                                ; altsyncram        ; work         ;
+;          |altsyncram_qrp1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 38400             ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:D_Memory|altsyncram:mem_rtl_0|altsyncram_qrp1:auto_generated ; altsyncram_qrp1   ; work         ;
+;    |RAM:I_Memory|                         ; 0 (0)               ; 0 (0)                     ; 1216              ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:I_Memory                                                     ; RAM               ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 1216              ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:I_Memory|altsyncram:mem_rtl_0                                ; altsyncram        ; work         ;
+;          |altsyncram_qhf1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1216              ; 0          ; 0    ; 0            ; |RISCV_FINAL_32bit|RAM:I_Memory|altsyncram:mem_rtl_0|altsyncram_qhf1:auto_generated ; altsyncram_qhf1   ; work         ;
+;    |RISCVALU:ALU|                         ; 218 (218)           ; 0 (0)                     ; 0                 ; 2          ; 0    ; 0            ; |RISCV_FINAL_32bit|RISCVALU:ALU                                                     ; RISCVALU          ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------+------------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------------+
+; Name                                                                        ; Type       ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                            ;
++-----------------------------------------------------------------------------+------------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------------+
+; RAM:D_Memory|altsyncram:mem_rtl_0|altsyncram_qrp1:auto_generated|ALTSYNCRAM ; M10K block ; Simple Dual Port ; 1200         ; 32           ; 1200         ; 32           ; 38400 ; db/RISCV_FINAL_32bit.ram0_RAM_8b38d987.hdl.mif ;
+; RAM:I_Memory|altsyncram:mem_rtl_0|altsyncram_qhf1:auto_generated|ALTSYNCRAM ; M10K block ; ROM              ; 38           ; 32           ; --           ; --           ; 1216  ; db/RISCV_FINAL_32bit.ram0_RAM_4f138f2e.hdl.mif ;
++-----------------------------------------------------------------------------+------------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Sum of two 18x18                ; 1           ;
+; Total number of DSP blocks      ; 2           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 3           ;
++---------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++------------------------------------------+------------------------------------------------+
+; Register name                            ; Reason for Removal                             ;
++------------------------------------------+------------------------------------------------+
+; ImmGen[13..15]                           ; Merged with ImmGen[12]                         ;
+; PClogic:PClogic|PC_plus_offset_R1[0]     ; Merged with PClogic:PClogic|PC_plus_four_R1[0] ;
+; PClogic:PClogic|PC_plus_offset_R[0]      ; Merged with PClogic:PClogic|PC_plus_four_R[0]  ;
+; PC[0]                                    ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_four_R1[0]       ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_four_R[0]        ; Lost fanout                                    ;
+; PC[8..31]                                ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_four_R1[8..31]   ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_offset_R1[8..31] ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_four_R[8..31]    ; Lost fanout                                    ;
+; PClogic:PClogic|PC_plus_offset_R[8..31]  ; Lost fanout                                    ;
+; Total Number of Removed Registers = 128  ;                                                ;
++------------------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal ; Registers Removed due to This Register                                                                  ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------------+
+; PC[31]        ; Lost Fanouts       ; PC[30], PC[29], PC[28], PC[27], PC[26], PC[25], PC[24], PC[23], PC[22], PC[21], PC[20], PC[19], PC[18], ;
+;               ;                    ; PC[17], PC[16], PC[15], PC[14], PC[13], PC[12], PC[11], PC[10], PC[9], PC[8],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[8], PClogic:PClogic|PC_plus_four_R1[9],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[10], PClogic:PClogic|PC_plus_four_R1[11],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[12], PClogic:PClogic|PC_plus_four_R1[13],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[14], PClogic:PClogic|PC_plus_four_R1[15],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[16], PClogic:PClogic|PC_plus_four_R1[17],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[18], PClogic:PClogic|PC_plus_four_R1[19],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[20], PClogic:PClogic|PC_plus_four_R1[21],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[22], PClogic:PClogic|PC_plus_four_R1[23],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[24], PClogic:PClogic|PC_plus_four_R1[25],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[26], PClogic:PClogic|PC_plus_four_R1[27],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[28], PClogic:PClogic|PC_plus_four_R1[29],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R1[30], PClogic:PClogic|PC_plus_four_R1[31],                               ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[31], PClogic:PClogic|PC_plus_offset_R1[30],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[29], PClogic:PClogic|PC_plus_offset_R1[28],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[27], PClogic:PClogic|PC_plus_offset_R1[26],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[25], PClogic:PClogic|PC_plus_offset_R1[24],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[23], PClogic:PClogic|PC_plus_offset_R1[22],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[21], PClogic:PClogic|PC_plus_offset_R1[20],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[19], PClogic:PClogic|PC_plus_offset_R1[18],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[17], PClogic:PClogic|PC_plus_offset_R1[16],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[15], PClogic:PClogic|PC_plus_offset_R1[14],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[13], PClogic:PClogic|PC_plus_offset_R1[12],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[11], PClogic:PClogic|PC_plus_offset_R1[10],                           ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R1[9], PClogic:PClogic|PC_plus_offset_R1[8],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[8], PClogic:PClogic|PC_plus_four_R[9],                                   ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[10], PClogic:PClogic|PC_plus_four_R[11],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[12], PClogic:PClogic|PC_plus_four_R[13],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[14], PClogic:PClogic|PC_plus_four_R[15],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[16], PClogic:PClogic|PC_plus_four_R[17],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[18], PClogic:PClogic|PC_plus_four_R[19],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[20], PClogic:PClogic|PC_plus_four_R[21],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[22], PClogic:PClogic|PC_plus_four_R[23],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[24], PClogic:PClogic|PC_plus_four_R[25],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[26], PClogic:PClogic|PC_plus_four_R[27],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[28], PClogic:PClogic|PC_plus_four_R[29],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_four_R[30], PClogic:PClogic|PC_plus_four_R[31],                                 ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[31], PClogic:PClogic|PC_plus_offset_R[30],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[29], PClogic:PClogic|PC_plus_offset_R[28],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[27], PClogic:PClogic|PC_plus_offset_R[26],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[25], PClogic:PClogic|PC_plus_offset_R[24],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[23], PClogic:PClogic|PC_plus_offset_R[22],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[21], PClogic:PClogic|PC_plus_offset_R[20],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[19], PClogic:PClogic|PC_plus_offset_R[18],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[17], PClogic:PClogic|PC_plus_offset_R[16],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[15], PClogic:PClogic|PC_plus_offset_R[14],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[13], PClogic:PClogic|PC_plus_offset_R[12],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[11], PClogic:PClogic|PC_plus_offset_R[10],                             ;
+;               ;                    ; PClogic:PClogic|PC_plus_offset_R[9], PClogic:PClogic|PC_plus_offset_R[8]                                ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1317  ;
+; Number of registers using Synchronous Clear  ; 1306  ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1165  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                 ;
++------------------------------+------------------------+------+
+; Register Name                ; Megafunction           ; Type ;
++------------------------------+------------------------+------+
+; RAM:D_Memory|data_out[0..31] ; RAM:D_Memory|mem_rtl_0 ; RAM  ;
+; RAM:I_Memory|data_out[0..31] ; RAM:I_Memory|mem_rtl_0 ; RAM  ;
++------------------------------+------------------------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|instr_count[22]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[31][19]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[30][29]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[29][27]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[28][20]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[27][22]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[26][4]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[25][17]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[24][31]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[23][25]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[22][12]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[21][6]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[20][6]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[19][2]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[18][30]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[17][15]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[16][3]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[15][26]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[14][20]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[13][19]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[12][29]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[11][30]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[10][31]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[9][25]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[8][9]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[7][9]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[6][23]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[5][2]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[4][9]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[3][9]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[2][3]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[1][17]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISCV_FINAL_32bit|Regs[0][25]        ;
+; 3:1                ; 46 bits   ; 92 LEs        ; 0 LEs                ; 92 LEs                 ; Yes        ; |RISCV_FINAL_32bit|EXMEMB[27]         ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |RISCV_FINAL_32bit|MEMWBrd[4]         ;
+; 3:1                ; 33 bits   ; 66 LEs        ; 0 LEs                ; 66 LEs                 ; Yes        ; |RISCV_FINAL_32bit|IDEXFuncCode[1]    ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |RISCV_FINAL_32bit|ImmGen[8]          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |RISCV_FINAL_32bit|ImmGen[4]          ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |RISCV_FINAL_32bit|PC[18]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISCV_FINAL_32bit|Bin[24]            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISCV_FINAL_32bit|Bin[6]             ;
+; 16:1               ; 31 bits   ; 310 LEs       ; 217 LEs              ; 93 LEs                 ; No         ; |RISCV_FINAL_32bit|RISCVALU:ALU|Mux25 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |RISCV_FINAL_32bit|Mux89              ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |RISCV_FINAL_32bit|Regs               ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |RISCV_FINAL_32bit|Ain[5]             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RAM:D_Memory|altsyncram:mem_rtl_0|altsyncram_qrp1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------+
+; Assignment                      ; Value              ; From ; To                        ;
++---------------------------------+--------------------+------+---------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                         ;
++---------------------------------+--------------------+------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RAM:I_Memory|altsyncram:mem_rtl_0|altsyncram_qhf1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------+
+; Assignment                      ; Value              ; From ; To                        ;
++---------------------------------+--------------------+------+---------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                         ;
++---------------------------------+--------------------+------+---------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RISCV_FINAL_32bit ;
++----------------+-------------+----------------------------------------------------+
+; Parameter Name ; Value       ; Type                                               ;
++----------------+-------------+----------------------------------------------------+
+; N              ; 20          ; Signed Integer                                     ;
+; M              ; 20          ; Signed Integer                                     ;
+; N2             ; 20          ; Signed Integer                                     ;
+; REG_WIDTH      ; 32          ; Signed Integer                                     ;
+; IFILENAME      ; IMemory.txt ; String                                             ;
++----------------+-------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:I_Memory ;
++----------------+-------------+----------------------------+
+; Parameter Name ; Value       ; Type                       ;
++----------------+-------------+----------------------------+
+; DATA_WIDTH     ; 32          ; Signed Integer             ;
+; SIZE           ; 38          ; Signed Integer             ;
+; FILE_NAME      ; IMemory.txt ; String                     ;
++----------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:D_Memory ;
++----------------+---------------+--------------------------+
+; Parameter Name ; Value         ; Type                     ;
++----------------+---------------+--------------------------+
+; DATA_WIDTH     ; 32            ; Signed Integer           ;
+; SIZE           ; 1200          ; Signed Integer           ;
+; FILE_NAME      ; D20_32bit.txt ; String                   ;
++----------------+---------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RISCVALU:ALU ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; REG_WIDTH      ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:MainControl ;
++----------------+---------+---------------------------------------+
+; Parameter Name ; Value   ; Type                                  ;
++----------------+---------+---------------------------------------+
+; RI             ; 0110011 ; Unsigned Binary                       ;
+; LW             ; 0000011 ; Unsigned Binary                       ;
+; SW             ; 0100011 ; Unsigned Binary                       ;
+; BLT            ; 1100011 ; Unsigned Binary                       ;
+; ADDI           ; 0010011 ; Unsigned Binary                       ;
+; NOP            ; 0000000 ; Unsigned Binary                       ;
++----------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RAM:D_Memory|altsyncram:mem_rtl_0                   ;
++------------------------------------+------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                          ; Type           ;
++------------------------------------+------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                              ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                             ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                            ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                             ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                            ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                              ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                      ; Untyped        ;
+; WIDTH_A                            ; 32                                             ; Untyped        ;
+; WIDTHAD_A                          ; 11                                             ; Untyped        ;
+; NUMWORDS_A                         ; 1200                                           ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                   ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                           ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WIDTH_B                            ; 32                                             ; Untyped        ;
+; WIDTHAD_B                          ; 11                                             ; Untyped        ;
+; NUMWORDS_B                         ; 1200                                           ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                         ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                         ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                         ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                         ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                   ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                         ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                              ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                              ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; M10K                                           ; Untyped        ;
+; BYTE_SIZE                          ; 8                                              ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; INIT_FILE                          ; db/RISCV_FINAL_32bit.ram0_RAM_8b38d987.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                         ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                              ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                          ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                          ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                              ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                      ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_qrp1                                ; Untyped        ;
++------------------------------------+------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RAM:I_Memory|altsyncram:mem_rtl_0                   ;
++------------------------------------+------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                          ; Type           ;
++------------------------------------+------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                              ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                             ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                            ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                             ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                            ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                              ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                            ; Untyped        ;
+; WIDTH_A                            ; 32                                             ; Untyped        ;
+; WIDTHAD_A                          ; 6                                              ; Untyped        ;
+; NUMWORDS_A                         ; 38                                             ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                   ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                           ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WIDTH_B                            ; 1                                              ; Untyped        ;
+; WIDTHAD_B                          ; 1                                              ; Untyped        ;
+; NUMWORDS_B                         ; 1                                              ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                         ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                         ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                         ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                         ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                   ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                         ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                              ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                              ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; M10K                                           ; Untyped        ;
+; BYTE_SIZE                          ; 8                                              ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; INIT_FILE                          ; db/RISCV_FINAL_32bit.ram0_RAM_4f138f2e.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                         ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                              ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                          ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                          ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                              ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                      ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_qhf1                                ; Untyped        ;
++------------------------------------+------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                              ;
++-------------------------------------------+-----------------------------------+
+; Name                                      ; Value                             ;
++-------------------------------------------+-----------------------------------+
+; Number of entity instances                ; 2                                 ;
+; Entity Instance                           ; RAM:D_Memory|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                         ;
+;     -- WIDTH_A                            ; 32                                ;
+;     -- NUMWORDS_A                         ; 1200                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                      ;
+;     -- WIDTH_B                            ; 32                                ;
+;     -- NUMWORDS_B                         ; 1200                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                      ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                         ;
+; Entity Instance                           ; RAM:I_Memory|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                               ;
+;     -- WIDTH_A                            ; 32                                ;
+;     -- NUMWORDS_A                         ; 38                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                      ;
+;     -- WIDTH_B                            ; 1                                 ;
+;     -- NUMWORDS_B                         ; 1                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                      ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                         ;
++-------------------------------------------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control:MainControl"                                                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; MemRead ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "RAM:I_Memory"          ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; wr_en           ; Input ; Info     ; Stuck at GND ;
+; addr_rd[31..30] ; Input ; Info     ; Stuck at GND ;
+; data_in         ; Input ; Info     ; Stuck at GND ;
+; addr_wr         ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PClogic:PClogic"                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; TotalBranches ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; timeswrong    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1317                        ;
+;     ENA               ; 6                           ;
+;     ENA SCLR          ; 1159                        ;
+;     SCLR              ; 147                         ;
+;     SLD               ; 3                           ;
+;     plain             ; 2                           ;
+; arriav_io_obuf        ; 72                          ;
+; arriav_lcell_comb     ; 1626                        ;
+;     arith             ; 155                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 76                          ;
+;         2 data inputs ; 78                          ;
+;     extend            ; 33                          ;
+;         7 data inputs ; 33                          ;
+;     normal            ; 1431                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 105                         ;
+;         4 data inputs ; 46                          ;
+;         5 data inputs ; 156                         ;
+;         6 data inputs ; 1068                        ;
+;     shared            ; 7                           ;
+;         2 data inputs ; 7                           ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 77                          ;
+; stratixv_ram_block    ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 8.16                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+    Info: Processing started: Sun Jun 04 21:16:32 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISCV_FINAL_32bit -c RISCV_FINAL_32bit
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Warning (12125): Using design file riscv_final_32bit.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RISCV_FINAL_32bit File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 6
+Info (12127): Elaborating entity "RISCV_FINAL_32bit" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at riscv_final_32bit.v(56): object "IDEXPC" assigned a value but never read File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 56
+Warning (10036): Verilog HDL or VHDL warning at riscv_final_32bit.v(56): object "EXMEMPC" assigned a value but never read File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 56
+Warning (10036): Verilog HDL or VHDL warning at riscv_final_32bit.v(72): object "IDEXIR" assigned a value but never read File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 72
+Warning (10036): Verilog HDL or VHDL warning at riscv_final_32bit.v(74): object "EXMEMrs1" assigned a value but never read File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 74
+Warning (10036): Verilog HDL or VHDL warning at riscv_final_32bit.v(74): object "EXMEMrs2" assigned a value but never read File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 74
+Warning (10230): Verilog HDL assignment warning at riscv_final_32bit.v(183): truncated value with size 34 to match size of target (32) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 183
+Warning (10230): Verilog HDL assignment warning at riscv_final_32bit.v(309): truncated value with size 32 to match size of target (16) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 309
+Warning (12125): Using design file pclogic.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PClogic File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 1
+Info (12128): Elaborating entity "PClogic" for hierarchy "PClogic:PClogic" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 122
+Warning (10230): Verilog HDL assignment warning at pclogic.v(26): truncated value with size 34 to match size of target (32) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at pclogic.v(64): variable "timeswrong" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 64
+Warning (10230): Verilog HDL assignment warning at pclogic.v(64): truncated value with size 32 to match size of target (16) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at pclogic.v(65): variable "ISBLT" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at pclogic.v(65): variable "TotalBranches" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 65
+Warning (10230): Verilog HDL assignment warning at pclogic.v(65): truncated value with size 32 to match size of target (16) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at pclogic.v(66): variable "rstn" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Warning (10240): Verilog HDL Always Construct warning at pclogic.v(63): inferring latch(es) for variable "timeswrong", which holds its previous value in one or more paths through the always construct File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 63
+Warning (10240): Verilog HDL Always Construct warning at pclogic.v(63): inferring latch(es) for variable "TotalBranches", which holds its previous value in one or more paths through the always construct File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 63
+Info (10041): Inferred latch for "TotalBranches[0]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[1]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[2]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[3]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[4]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[5]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[6]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[7]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[8]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[9]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[10]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[11]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[12]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[13]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[14]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "TotalBranches[15]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[0]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[1]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[2]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[3]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[4]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[5]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[6]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[7]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[8]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[9]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[10]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[11]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[12]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[13]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[14]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Info (10041): Inferred latch for "timeswrong[15]" at pclogic.v(66) File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 66
+Warning (12125): Using design file branchpredictor.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: BranchPredictor File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/branchpredictor.v Line: 1
+Info (12128): Elaborating entity "BranchPredictor" for hierarchy "PClogic:PClogic|BranchPredictor:BP" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/pclogic.v Line: 44
+Warning (12125): Using design file ram.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RAM File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ram.v Line: 1
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:I_Memory" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 131
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:D_Memory" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 140
+Warning (10850): Verilog HDL warning at ram.v(18): number of words (800) in memory file does not match the number of elements in the address range [0:1199] File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ram.v Line: 18
+Warning (12125): Using design file alucontrol.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ALUControl File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/alucontrol.v Line: 1
+Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ALUControl" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 142
+Warning (10935): Verilog HDL Casex/Casez warning at alucontrol.v(14): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/alucontrol.v Line: 14
+Warning (12125): Using design file riscvalu.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RISCVALU File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscvalu.v Line: 1
+Info (12128): Elaborating entity "RISCVALU" for hierarchy "RISCVALU:ALU" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 149
+Warning (12125): Using design file forwarding.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Forwarding File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/forwarding.v Line: 1
+Info (12128): Elaborating entity "Forwarding" for hierarchy "Forwarding:Mainforwarding" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 159
+Warning (12125): Using design file control.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Control File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/control.v Line: 1
+Info (12128): Elaborating entity "Control" for hierarchy "Control:MainControl" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 169
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "RealALUCtl[0]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 100
+    Warning (13049): Converted tri-state buffer "RealALUCtl[1]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 100
+    Warning (13049): Converted tri-state buffer "RealALUCtl[2]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 100
+    Warning (13049): Converted tri-state buffer "RealALUCtl[3]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 100
+    Warning (13049): Converted tri-state buffer "Control:MainControl|ALUOp[0]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/control.v Line: 21
+    Warning (13049): Converted tri-state buffer "Control:MainControl|ALUOp[1]" feeding internal logic into a wire File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/control.v Line: 21
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "RAM:D_Memory|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 1200
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 11
+        Info (286033): Parameter NUMWORDS_B set to 1200
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M10K
+        Info (286033): Parameter INIT_FILE set to db/RISCV_FINAL_32bit.ram0_RAM_8b38d987.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "RAM:I_Memory|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 38
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M10K
+        Info (286033): Parameter INIT_FILE set to db/RISCV_FINAL_32bit.ram0_RAM_4f138f2e.hdl.mif
+Info (12130): Elaborated megafunction instantiation "RAM:D_Memory|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "RAM:D_Memory|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "1200"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "11"
+    Info (12134): Parameter "NUMWORDS_B" = "1200"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "M10K"
+    Info (12134): Parameter "INIT_FILE" = "db/RISCV_FINAL_32bit.ram0_RAM_8b38d987.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qrp1.tdf
+    Info (12023): Found entity 1: altsyncram_qrp1 File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/altsyncram_qrp1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "RAM:I_Memory|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "RAM:I_Memory|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "38"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "M10K"
+    Info (12134): Parameter "INIT_FILE" = "db/RISCV_FINAL_32bit.ram0_RAM_4f138f2e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qhf1.tdf
+    Info (12023): Found entity 1: altsyncram_qhf1 File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/db/altsyncram_qhf1.tdf Line: 28
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[0]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[4]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[5]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[6]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[7]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[8]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[9]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[11]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[12]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[13]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[14]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[15]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[16]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[17]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[18]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[19]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[20]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[21]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[22]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[23]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[24]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[25]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[26]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[27]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[28]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[29]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[30]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[31]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[35]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[0]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[2]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[4]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[5]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[6]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[7]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[8]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[9]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[10]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[11]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[12]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[13]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[14]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[15]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[16]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[17]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[18]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[19]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[20]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[21]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[22]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[23]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[25]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[26]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[27]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[28]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[29]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[30]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[31]" and its non-tri-state driver. File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[0]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[1]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[2]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[3]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[4]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[5]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[6]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[7]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[8]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[9]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[11]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[12]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[13]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[14]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[15]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[16]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[17]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[18]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[19]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[20]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[21]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[22]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[23]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[24]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[25]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[26]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[27]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[28]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[29]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[30]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[31]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_0[35]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 22
+    Warning (13010): Node "GPIO_1[0]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[1]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[2]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[3]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[4]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[5]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[6]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[7]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[8]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[9]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[10]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[11]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[12]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[13]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[14]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[15]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[16]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[17]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[18]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[19]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[20]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[21]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[22]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[23]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[24]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[25]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[26]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[27]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[28]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[29]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[30]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+    Warning (13010): Node "GPIO_1[31]~synth" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 26
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 123 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCV_FINAL_32bit.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 19
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 19
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/riscv_final_32bit.v Line: 19
+Info (21057): Implemented 2962 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 0 output pins
+    Info (21060): Implemented 72 bidirectional pins
+    Info (21061): Implemented 2819 logic cells
+    Info (21064): Implemented 64 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 178 warnings
+    Info: Peak virtual memory: 4906 megabytes
+    Info: Processing ended: Sun Jun 04 21:16:43 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCV_FINAL_32bit.map.smsg.
+
+

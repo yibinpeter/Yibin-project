@@ -1,0 +1,20 @@
+//Copyright (C)2014-2023 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//GOWIN Version: 1.9.9 Beta-2
+//Part Number: GW1NS-LV4CQN48C7/I6
+//Device: GW1NS-4C
+//Created Time: Wed 07 19 16:22:19 2023
+
+IO_LOC "o_SPI_CS_n" 13;
+IO_PORT "o_SPI_CS_n" PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "o_SPI_MOSI" 16;
+IO_PORT "o_SPI_MOSI" PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "o_SPI_Clk" 14;
+IO_PORT "o_SPI_Clk" PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "i_SPI_MISO" 15;
+IO_PORT "i_SPI_MISO" PULL_MODE=UP BANK_VCCIO=1.8;
+IO_LOC "i_TX_DV" 23;
+IO_PORT "i_TX_DV" PULL_MODE=UP BANK_VCCIO=1.8;
+IO_LOC "i_Clk" 22;
+IO_PORT "i_Clk" PULL_MODE=UP BANK_VCCIO=1.8;

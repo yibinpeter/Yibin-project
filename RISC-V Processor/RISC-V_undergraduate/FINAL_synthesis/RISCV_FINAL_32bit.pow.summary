@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Sun Jun 04 21:18:58 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+Revision Name : RISCV_FINAL_32bit
+Top-level Entity Name : RISCV_FINAL_32bit
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Power Models : Final
+Total Thermal Power Dissipation : 502.50 mW
+Core Dynamic Thermal Power Dissipation : 28.97 mW
+Core Static Thermal Power Dissipation : 411.80 mW
+I/O Thermal Power Dissipation : 61.74 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

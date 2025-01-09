@@ -1,0 +1,251 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_16bit_synthesis/simulation
+vALUControl
+Z0 !s110 1701283673
+!i10b 1
+!s100 mRn2UAZ`HNOIBd_4PT>M;2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;fcN`d6d>[IdZZ]3gA7^I2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Sim
+w1679298172
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v
+!i122 40
+L0 1 26
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1701283673.000000
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@a@l@u@control
+vBranchPredictor
+R0
+!i10b 1
+!s100 C<n<hVkY_6CT;fn52b]zX1
+R1
+IhQY<5]>izURjRY;MQP34<0
+R2
+R3
+w1684123492
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v
+!i122 41
+L0 1 36
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v|
+!i113 1
+R6
+R7
+n@branch@predictor
+vControl
+R0
+!i10b 1
+!s100 lKQ>0mUHVgFbm:R^HQ<ND1
+R1
+IF@COY^6ec4_@Rd3mCoY8F3
+R2
+R3
+w1684562658
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v
+!i122 42
+L0 1 91
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v|
+!i113 1
+R6
+R7
+n@control
+vForwarding
+R0
+!i10b 1
+!s100 E<Z<;T]]_d`J8TmaHGWKV2
+R1
+I5h[3hK:[T3kLiliZ:JSXn2
+R2
+R3
+w1684562308
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v
+!i122 43
+L0 1 32
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v|
+!i113 1
+R6
+R7
+n@forwarding
+vPClogic
+R0
+!i10b 1
+!s100 X6@:J[1DN[U1Ie@H6P<Sj3
+R1
+Im:74e9heHGc3:59NiCL`l2
+R2
+R3
+w1685946047
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v
+!i122 44
+L0 1 72
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v|
+!i113 1
+R6
+R7
+n@p@clogic
+vRAM
+R0
+!i10b 1
+!s100 nBhT@F>z9hR69hze4gB6a2
+R1
+IZm9?4ChaL9;^@P=Em8J1F2
+R2
+R3
+w1684562360
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v
+!i122 45
+L0 1 28
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v|
+!i113 1
+R6
+R7
+n@r@a@m
+vRISCV_FINAL_32bit
+!s110 1701283674
+!i10b 1
+!s100 Mg;@mKMB2ToQ<z@nOO^YU2
+R1
+I8PP4Q4Zd[1>AOj<T;l:072
+R2
+R3
+w1701283668
+Z8 8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v
+Z9 FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v
+!i122 49
+Z10 L0 4 193
+R4
+r1
+!s85 0
+31
+R5
+Z11 !s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v|
+!i113 1
+R6
+R7
+n@r@i@s@c@v_@f@i@n@a@l_32bit
+vRISCV_top_mat_mul
+R0
+!i10b 1
+!s100 d=b6oo=[iB?9l`Tnh]]Z32
+R1
+IcJ1?UeU]RBF67j1ZVD0953
+R2
+R3
+w1701283608
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v
+!i122 48
+L0 1 299
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v|
+!i113 1
+R6
+R7
+n@r@i@s@c@v_top_mat_mul
+vRISCVALU
+R0
+!i10b 1
+!s100 XYaeE7C;aA:k<Ubz6LFf?3
+R1
+IBo3__LYj=KKSa2UVl>L[j0
+R2
+R3
+w1681435740
+8C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v
+FC:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v
+!i122 47
+L0 1 24
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v|
+!i113 1
+R6
+R7
+n@r@i@s@c@v@a@l@u
+vtb_RISCV
+!s110 1701283619
+!i10b 1
+!s100 zj5>=H:8zik?B6HIE:72G0
+R1
+Ii^XjMVXQh[X3Rc_T^QSz[3
+R2
+R3
+w1684561850
+R8
+R9
+!i122 39
+R10
+R4
+r1
+!s85 0
+31
+!s108 1701283619.000000
+R11
+R12
+!i113 1
+R6
+R7
+ntb_@r@i@s@c@v

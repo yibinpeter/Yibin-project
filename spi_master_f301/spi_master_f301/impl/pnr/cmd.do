@@ -1,0 +1,12 @@
+-d C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\impl\gwsynthesis\spi_master_f301.vg
+-p GW1NS-4C-QFN48-7
+-pn GW1NS-LV4CQN48C7/I6
+-cst C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\src\spi_master_f301.cst
+-cfg C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

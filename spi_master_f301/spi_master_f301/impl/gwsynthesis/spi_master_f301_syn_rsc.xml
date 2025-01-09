@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="SPI_Master_With_Single_CS" Register="9" Lut="20">
+    <SubModule name="SPI_Master_Inst" Register="30" Lut="39"/>
+</Module>

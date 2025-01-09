@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NS-4C" package="QFN48" speed="7" partNumber="GW1NS-LV4CQN48C7/I6"/>
+    <FileList>
+        <File path="C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\src\top.v" type="verilog"/>
+        <File path="C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\src\SPI_Master.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="C:\Users\yibin\OneDrive\Desktop\SUPCON\fc301_yibin\spi_master_f301\spi_master_f301\impl\gwsynthesis\spi_master_f301.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

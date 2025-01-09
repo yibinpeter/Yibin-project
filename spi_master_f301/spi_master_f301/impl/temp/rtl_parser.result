@@ -1,0 +1,20 @@
+[
+ {
+  "InstFile" : "C:/Users/yibin/OneDrive/Desktop/SUPCON/fc301_yibin/spi_master_f301/spi_master_f301/src/top.v",
+  "InstLine" : 35,
+  "InstName" : "SPI_Master_With_Single_CS",
+  "ModuleFile" : "C:/Users/yibin/OneDrive/Desktop/SUPCON/fc301_yibin/spi_master_f301/spi_master_f301/src/top.v",
+  "ModuleLine" : 35,
+  "ModuleName" : "SPI_Master_With_Single_CS",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/yibin/OneDrive/Desktop/SUPCON/fc301_yibin/spi_master_f301/spi_master_f301/src/top.v",
+    "InstLine" : 79,
+    "InstName" : "SPI_Master_Inst",
+    "ModuleFile" : "C:/Users/yibin/OneDrive/Desktop/SUPCON/fc301_yibin/spi_master_f301/spi_master_f301/src/SPI_Master.v",
+    "ModuleLine" : 33,
+    "ModuleName" : "SPI_Master"
+   }
+  ]
+ }
+]

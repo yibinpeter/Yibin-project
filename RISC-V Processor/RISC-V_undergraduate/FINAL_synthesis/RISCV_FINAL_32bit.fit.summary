@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Jun 04 21:18:39 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+Revision Name : RISCV_FINAL_32bit
+Top-level Entity Name : RISCV_FINAL_32bit
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 1,377 / 32,070 ( 4 % )
+Total registers : 1317
+Total pins : 77 / 457 ( 17 % )
+Total virtual pins : 0
+Total block memory bits : 39,616 / 4,065,280 ( < 1 % )
+Total RAM Blocks : 8 / 397 ( 2 % )
+Total DSP Blocks : 2 / 87 ( 2 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,73 @@
+C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVCPU_full.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_top_mat_mul
+
+Top level modules:
+	RISCV_top_mat_mul
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCVALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCVALU
+
+Top level modules:
+	RISCVALU
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/PClogic.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PClogic
+
+Top level modules:
+	PClogic
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Control
+
+Top level modules:
+	Control
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v {2 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_FINAL_32bit
+** Warning: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v(147): (vlog-10557) Ignoring illegal width specifier '%1.1d' in format
+** Warning: C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/tb_RISCV_mat_mul.v(147): (vlog-10557) Ignoring illegal width specifier '%1.1d' in format
+
+Top level modules:
+	RISCV_FINAL_32bit
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/BranchPredictor.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module BranchPredictor
+
+Top level modules:
+	BranchPredictor
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCV_FINAL_32bit.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RISCV_FINAL_32bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_FINAL_32bit
+
+Top level modules:
+	RISCV_FINAL_32bit
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/Forwarding.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Forwarding
+
+Top level modules:
+	Forwarding
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/ALUControl.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALUControl
+
+Top level modules:
+	ALUControl
+
+} {} {}} C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v {1 {vlog -work work -stats=none C:/Users/yibin/OneDrive/Desktop/181_Final/FINAL_synthesis/RAM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RAM
+
+Top level modules:
+	RAM
+
+} {} {}}
